@@ -30,7 +30,8 @@ else
 fi
 
 
-dnf install mysql-server -y &>>$LOGFILE
+sudo dnf install mysql-community-server --nogpgcheck -y
+ &>>$LOGFILE
 VALIDATE $? "Installing MySQL Server"
 
 systemctl enable mysqld &>>$LOGFILE
